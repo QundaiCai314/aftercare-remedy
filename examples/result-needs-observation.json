@@ -1,0 +1,61 @@
+{
+  "message_type": "result",
+  "body": {
+    "contract_version": "1.0.0",
+    "skill_id": "aftercare-remedy",
+    "call_id": "call-remedy-demo",
+    "task_id": "task-demo",
+    "based_on_task_revision": 4,
+    "status": "needs_observation",
+    "data": {
+      "options": [
+        {
+          "option_id": "option-return",
+          "kind": "return_refund",
+          "explanation": "页面提供退回商品并申请退款的入口，是否符合资格、金额与运费还需核对；申请不保证获批。",
+          "conditions": [
+            {
+              "key": "return",
+              "value": "申请此方案需寄回商品",
+              "evidence_refs": [
+                "ev-rule"
+              ],
+              "certainty": "observed"
+            }
+          ],
+          "consequences": [],
+          "missing_facts": [
+            "eligibility",
+            "refund_amount",
+            "return_fee",
+            "deadline"
+          ]
+        }
+      ],
+      "recommended_option_id": null,
+      "chosen_option_id": null,
+      "choice_receipt_ref": null,
+      "material_requirements": [
+        {
+          "key": "photo",
+          "value": "页面要求提供商品问题照片",
+          "evidence_refs": [
+            "ev-rule"
+          ],
+          "certainty": "observed"
+        }
+      ],
+      "next_steps": []
+    },
+    "questions": [],
+    "issues": [
+      {
+        "code": "policy_unknown",
+        "message": "先查看这件商品的申请条件、金额、运费和期限。",
+        "retryable": true,
+        "evidence_refs": []
+      }
+    ],
+    "user_message": "先查看这件商品的申请条件、金额、运费和期限。"
+  }
+}

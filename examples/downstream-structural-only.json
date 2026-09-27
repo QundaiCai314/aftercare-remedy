@@ -1,0 +1,65 @@
+{
+  "notice": "仅检查已设计接口的结构，不登记引用、不调用下游，不可据此执行。v1 正式交接关闭。",
+  "evidence_request": {
+    "contract_version": "1.0.0",
+    "skill_id": "aftercare-evidence",
+    "skill_version": "1.0.0",
+    "call_id": "call-evidence-shape",
+    "task_id": "task-demo",
+    "expected_task_revision": 4,
+    "mode": "guided",
+    "task_snapshot": {
+      "artifact_id": "snapshot-demo",
+      "kind": "TaskSnapshot",
+      "revision": 1
+    },
+    "inputs": {
+      "remedy": {
+        "artifact_id": "remedy-demo",
+        "kind": "RemedyPlan",
+        "revision": 1
+      },
+      "platform_view": {
+        "artifact_id": "view-demo",
+        "kind": "PlatformView",
+        "revision": 1
+      },
+      "approved_file_refs": [],
+      "user_turn": null
+    }
+  },
+  "interact_request": {
+    "contract_version": "1.0.0",
+    "skill_id": "aftercare-interact",
+    "skill_version": "1.0.0",
+    "call_id": "call-interact-shape",
+    "task_id": "task-demo",
+    "expected_task_revision": 4,
+    "mode": "guided",
+    "task_snapshot": {
+      "artifact_id": "snapshot-demo",
+      "kind": "TaskSnapshot",
+      "revision": 1
+    },
+    "inputs": {
+      "goal_step": {
+        "intent": "解释当前方案",
+        "reason": "仅结构演示，不授权申请准备",
+        "required_evidence": [],
+        "next_skill_hint": "aftercare-interact"
+      },
+      "platform_view": {
+        "artifact_id": "view-demo",
+        "kind": "PlatformView",
+        "revision": 1
+      },
+      "source_artifacts": [
+        {
+          "artifact_id": "remedy-demo",
+          "kind": "RemedyPlan",
+          "revision": 1
+        }
+      ]
+    }
+  }
+}

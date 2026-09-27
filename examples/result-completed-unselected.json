@@ -1,0 +1,54 @@
+{
+  "message_type": "result",
+  "body": {
+    "contract_version": "1.0.0",
+    "skill_id": "aftercare-remedy",
+    "call_id": "call-remedy-demo",
+    "task_id": "task-demo",
+    "based_on_task_revision": 4,
+    "status": "completed",
+    "data": {
+      "options": [
+        {
+          "option_id": "option-return",
+          "kind": "return_refund",
+          "explanation": "页面提供退回商品并申请退款的入口，是否符合资格、金额与运费还需核对；申请不保证获批。",
+          "conditions": [
+            {
+              "key": "return",
+              "value": "申请此方案需寄回商品",
+              "evidence_refs": [
+                "ev-rule"
+              ],
+              "certainty": "observed"
+            }
+          ],
+          "consequences": [],
+          "missing_facts": [
+            "eligibility",
+            "refund_amount",
+            "return_fee",
+            "deadline"
+          ]
+        }
+      ],
+      "recommended_option_id": null,
+      "chosen_option_id": null,
+      "choice_receipt_ref": null,
+      "material_requirements": [
+        {
+          "key": "photo",
+          "value": "页面要求提供商品问题照片",
+          "evidence_refs": [
+            "ev-rule"
+          ],
+          "certainty": "observed"
+        }
+      ],
+      "next_steps": []
+    },
+    "questions": [],
+    "issues": [],
+    "user_message": "目前已说明页面所示路径及未知项。你可以先了解，不必现在选择；这不表示可以开始申请。"
+  }
+}

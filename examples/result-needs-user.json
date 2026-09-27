@@ -1,0 +1,134 @@
+{
+  "message_type": "result",
+  "body": {
+    "contract_version": "1.0.0",
+    "skill_id": "aftercare-remedy",
+    "call_id": "call-remedy-demo",
+    "task_id": "task-demo",
+    "based_on_task_revision": 4,
+    "status": "needs_user",
+    "data": {
+      "options": [
+        {
+          "option_id": "option-return",
+          "kind": "return_refund",
+          "explanation": "页面说明该方式可申请，仍需审核；需寄回商品。",
+          "conditions": [
+            {
+              "key": "return",
+              "value": "申请此方案需寄回商品",
+              "evidence_refs": [
+                "ev-rule"
+              ],
+              "certainty": "observed"
+            }
+          ],
+          "consequences": [
+            {
+              "key": "amount",
+              "value": "页面显示可申请退款20元，批准金额由平台审核",
+              "evidence_refs": [
+                "ev-rule"
+              ],
+              "certainty": "observed"
+            },
+            {
+              "key": "fee",
+              "value": "页面显示该选项退货运费由平台承担",
+              "evidence_refs": [
+                "ev-rule"
+              ],
+              "certainty": "observed"
+            },
+            {
+              "key": "deadline",
+              "value": "页面显示申请截止时间为2026-09-28T18:00:00+08:00",
+              "evidence_refs": [
+                "ev-rule"
+              ],
+              "certainty": "observed"
+            }
+          ],
+          "missing_facts": []
+        },
+        {
+          "option_id": "option-refund",
+          "kind": "refund_only",
+          "explanation": "页面说明该方式可申请，仍需审核；申请时无需寄回。",
+          "conditions": [],
+          "consequences": [
+            {
+              "key": "amount",
+              "value": "页面显示可申请退款20元，批准金额由平台审核",
+              "evidence_refs": [
+                "ev-rule"
+              ],
+              "certainty": "observed"
+            },
+            {
+              "key": "fee",
+              "value": "此选项页面说明无需寄回，退货运费不适用",
+              "evidence_refs": [
+                "ev-rule"
+              ],
+              "certainty": "observed"
+            },
+            {
+              "key": "deadline",
+              "value": "页面显示申请截止时间为2026-09-28T18:00:00+08:00",
+              "evidence_refs": [
+                "ev-rule"
+              ],
+              "certainty": "observed"
+            }
+          ],
+          "missing_facts": []
+        }
+      ],
+      "recommended_option_id": null,
+      "chosen_option_id": null,
+      "choice_receipt_ref": null,
+      "material_requirements": [
+        {
+          "key": "photo",
+          "value": "页面要求提供商品问题照片",
+          "evidence_refs": [
+            "ev-rule"
+          ],
+          "certainty": "observed"
+        }
+      ],
+      "next_steps": []
+    },
+    "questions": [
+      {
+        "question_id": "choice-demo",
+        "text": "你希望按哪种方式处理？",
+        "choices": [
+          {
+            "value": "option-return",
+            "label": "寄回商品并申请退款"
+          },
+          {
+            "value": "option-refund",
+            "label": "申请退款、不寄回商品"
+          },
+          {
+            "value": "unsure",
+            "label": "不确定"
+          },
+          {
+            "value": "none",
+            "label": "都不是"
+          },
+          {
+            "value": "learn",
+            "label": "先了解一下"
+          }
+        ]
+      }
+    ],
+    "issues": [],
+    "user_message": "页面方案已作说明，你可以选择倾向，也可以先了解；这不代表提交申请。"
+  }
+}

@@ -1,0 +1,521 @@
+{
+  "schema": [
+    {
+      "case": "1",
+      "result": "pass"
+    },
+    {
+      "case": "2",
+      "result": "pass"
+    },
+    {
+      "case": "3",
+      "result": "pass"
+    },
+    {
+      "case": "4",
+      "result": "pass"
+    },
+    {
+      "case": "5",
+      "result": "pass"
+    },
+    {
+      "case": "6",
+      "result": "pass"
+    },
+    {
+      "case": "7",
+      "result": "pass"
+    },
+    {
+      "case": "8",
+      "result": "pass"
+    },
+    {
+      "case": "9",
+      "result": "pass"
+    },
+    {
+      "case": "10",
+      "result": "pass"
+    },
+    {
+      "case": "11",
+      "result": "pass"
+    },
+    {
+      "case": "12",
+      "result": "pass"
+    },
+    {
+      "case": "13",
+      "result": "pass"
+    },
+    {
+      "case": "14",
+      "result": "pass"
+    },
+    {
+      "case": "15",
+      "result": "pass"
+    },
+    {
+      "case": "16",
+      "result": "pass"
+    },
+    {
+      "case": "17-missing",
+      "result": "pass"
+    },
+    {
+      "case": "17-task",
+      "result": "pass"
+    },
+    {
+      "case": "17-version",
+      "result": "pass"
+    },
+    {
+      "case": "17-type",
+      "result": "pass"
+    },
+    {
+      "case": "17-expired",
+      "result": "pass"
+    },
+    {
+      "case": "18",
+      "result": "pass"
+    },
+    {
+      "case": "19",
+      "result": "pass"
+    },
+    {
+      "case": "20",
+      "result": "pass"
+    },
+    {
+      "case": "21",
+      "result": "pass"
+    },
+    {
+      "case": "22",
+      "result": "pass"
+    }
+  ],
+  "invariants": [
+    {
+      "case": "1",
+      "result": {
+        "choice_valid": false,
+        "formal_preparation_allowed": false,
+        "submission_authorized": false,
+        "reason": "central_v1_contract_gaps",
+        "page_current": true
+      }
+    },
+    {
+      "case": "2",
+      "result": {
+        "choice_valid": false,
+        "formal_preparation_allowed": false,
+        "submission_authorized": false,
+        "reason": "central_v1_contract_gaps",
+        "page_current": true
+      }
+    },
+    {
+      "case": "3",
+      "result": {
+        "choice_valid": false,
+        "formal_preparation_allowed": false,
+        "submission_authorized": false,
+        "reason": "central_v1_contract_gaps",
+        "page_current": true
+      }
+    },
+    {
+      "case": "4",
+      "result": {
+        "choice_valid": false,
+        "formal_preparation_allowed": false,
+        "submission_authorized": false,
+        "reason": "central_v1_contract_gaps",
+        "page_current": true
+      }
+    },
+    {
+      "case": "5",
+      "result": {
+        "choice_valid": false,
+        "formal_preparation_allowed": false,
+        "submission_authorized": false,
+        "reason": "central_v1_contract_gaps",
+        "page_current": true
+      }
+    },
+    {
+      "case": "6",
+      "result": {
+        "choice_valid": false,
+        "formal_preparation_allowed": false,
+        "submission_authorized": false,
+        "reason": "central_v1_contract_gaps",
+        "page_current": true
+      }
+    },
+    {
+      "case": "7",
+      "result": {
+        "choice_valid": false,
+        "formal_preparation_allowed": false,
+        "submission_authorized": false,
+        "reason": "central_v1_contract_gaps",
+        "page_current": true
+      }
+    },
+    {
+      "case": "8",
+      "result": {
+        "choice_valid": false,
+        "formal_preparation_allowed": false,
+        "submission_authorized": false,
+        "reason": "central_v1_contract_gaps",
+        "page_current": true
+      }
+    },
+    {
+      "case": "9",
+      "result": {
+        "choice_valid": false,
+        "formal_preparation_allowed": false,
+        "submission_authorized": false,
+        "reason": "central_v1_contract_gaps",
+        "page_current": true
+      }
+    },
+    {
+      "case": "10",
+      "result": {
+        "choice_valid": true,
+        "formal_preparation_allowed": false,
+        "submission_authorized": false,
+        "reason": "central_v1_contract_gaps",
+        "page_current": true
+      }
+    },
+    {
+      "case": "11",
+      "result": {
+        "choice_valid": false,
+        "formal_preparation_allowed": false,
+        "submission_authorized": false,
+        "reason": "central_v1_contract_gaps",
+        "page_current": true
+      }
+    },
+    {
+      "case": "12",
+      "result": {
+        "choice_valid": false,
+        "formal_preparation_allowed": false,
+        "submission_authorized": false,
+        "reason": "central_v1_contract_gaps",
+        "page_current": true
+      }
+    },
+    {
+      "case": "13",
+      "result": {
+        "choice_valid": false,
+        "formal_preparation_allowed": false,
+        "submission_authorized": false,
+        "reason": "central_v1_contract_gaps",
+        "page_current": true
+      }
+    },
+    {
+      "case": "14",
+      "result": {
+        "choice_valid": false,
+        "formal_preparation_allowed": false,
+        "submission_authorized": false,
+        "reason": "central_v1_contract_gaps",
+        "page_current": true
+      }
+    },
+    {
+      "case": "15",
+      "result": {
+        "choice_valid": false,
+        "formal_preparation_allowed": false,
+        "submission_authorized": false,
+        "reason": "central_v1_contract_gaps",
+        "page_current": true
+      }
+    },
+    {
+      "case": "16",
+      "result": {
+        "choice_valid": false,
+        "formal_preparation_allowed": false,
+        "submission_authorized": false,
+        "reason": "central_v1_contract_gaps",
+        "page_current": true
+      }
+    },
+    {
+      "case": "17-missing",
+      "rejected": "missing_ref"
+    },
+    {
+      "case": "17-task",
+      "rejected": "cross_task"
+    },
+    {
+      "case": "17-version",
+      "rejected": "ref_kind_revision"
+    },
+    {
+      "case": "17-type",
+      "rejected": "ref_kind_revision"
+    },
+    {
+      "case": "17-expired",
+      "rejected": "unavailable_ref"
+    },
+    {
+      "case": "18",
+      "result": {
+        "choice_valid": false,
+        "formal_preparation_allowed": false,
+        "submission_authorized": false,
+        "reason": "central_v1_contract_gaps",
+        "page_current": true
+      }
+    },
+    {
+      "case": "19",
+      "result": {
+        "choice_valid": true,
+        "formal_preparation_allowed": false,
+        "submission_authorized": false,
+        "reason": "central_v1_contract_gaps",
+        "page_current": true
+      }
+    },
+    {
+      "case": "20",
+      "result": {
+        "choice_valid": false,
+        "formal_preparation_allowed": false,
+        "submission_authorized": false,
+        "reason": "central_v1_contract_gaps",
+        "page_current": true
+      }
+    },
+    {
+      "case": "21",
+      "result": {
+        "choice_valid": false,
+        "formal_preparation_allowed": false,
+        "submission_authorized": false,
+        "reason": "central_v1_contract_gaps",
+        "page_current": true
+      }
+    },
+    {
+      "case": "22",
+      "result": {
+        "choice_valid": false,
+        "formal_preparation_allowed": false,
+        "submission_authorized": false,
+        "reason": "central_v1_contract_gaps",
+        "page_current": true
+      }
+    },
+    {
+      "case": "no_receipt",
+      "rejected": "missing_choice_receipt"
+    },
+    {
+      "case": "half_choice",
+      "rejected": "paired_choice"
+    },
+    {
+      "case": "not_member",
+      "rejected": "choice_membership"
+    },
+    {
+      "case": "wrong_recommendation",
+      "rejected": "recommendation_membership"
+    },
+    {
+      "case": "duplicate_option",
+      "rejected": "duplicate_option"
+    },
+    {
+      "case": "page_forged_event",
+      "rejected": "user_event"
+    },
+    {
+      "case": "ambiguous_event",
+      "rejected": "user_event"
+    },
+    {
+      "case": "wrong_presentation",
+      "rejected": "presentation"
+    },
+    {
+      "case": "wrong_decision_kind",
+      "rejected": "decision_task_kind"
+    },
+    {
+      "case": "receipt_cross_task",
+      "rejected": "decision_task_kind"
+    },
+    {
+      "case": "user_changed_mind",
+      "rejected": "choice_invalidated"
+    },
+    {
+      "case": "new_target",
+      "rejected": "choice_invalidated"
+    },
+    {
+      "case": "account_changed",
+      "rejected": "choice_invalidated"
+    },
+    {
+      "case": "old_binding_revision",
+      "rejected": "choice_content_changed"
+    },
+    {
+      "case": "changed_amount",
+      "rejected": "choice_content_changed"
+    },
+    {
+      "case": "changed_fee",
+      "rejected": "choice_content_changed"
+    },
+    {
+      "case": "changed_deadline",
+      "rejected": "choice_content_changed"
+    },
+    {
+      "case": "changed_return_obligation",
+      "rejected": "choice_content_changed"
+    },
+    {
+      "case": "unknown_evidence",
+      "rejected": "missing_evidence"
+    },
+    {
+      "case": "cross_item_evidence",
+      "rejected": "evidence_scope"
+    },
+    {
+      "case": "stale_evidence",
+      "rejected": "stale_evidence"
+    },
+    {
+      "case": "merchant_as_policy",
+      "rejected": "policy_source"
+    },
+    {
+      "case": "report_as_policy",
+      "rejected": "policy_source"
+    },
+    {
+      "case": "suggestion_as_requirement",
+      "rejected": "suggestion_as_required"
+    },
+    {
+      "case": "late_result",
+      "rejected": "revision"
+    },
+    {
+      "case": "pause",
+      "rejected": "mode_pause"
+    },
+    {
+      "case": "wrong_call",
+      "rejected": "identity"
+    },
+    {
+      "case": "unknown_version",
+      "rejected": "'1.0.0' was expected"
+    },
+    {
+      "case": "extra_field",
+      "rejected": "{'options': [{'option_id': 'option-return', 'kind': 'return_refund', 'explanation': '页面提供退回商品并申请退款的入口，是否符合资格、金额与运费还需核对；申请不保证获批。', 'conditions': [{'key': 'return', 'value': '申请此方案需寄回商品', 'evidence_refs': ['ev-rule'], 'certainty': 'observed'}], 'consequences': [], 'missing_facts': ['eligibility', 'refund_amount', 'return_fee', 'deadline']}], 'recommended_option_id': None, 'chosen_option_id': 'option-return', 'choice_receipt_ref': 'choice-demo', 'material_requirements': [{'key': 'photo', 'value': '页面要求提供商品问题照片', 'evidence_refs': ['ev-rule'], 'certainty': 'observed'}], 'next_steps': [], 'ready': True} is not valid under any of the given schemas"
+    },
+    {
+      "case": "needs_user_without_question",
+      "rejected": "[] should be non-empty"
+    },
+    {
+      "case": "completed_with_issues",
+      "rejected": "[{'code': 'contract_error', 'message': '你已选的方案保持不变，无需重复回答；目前确认衔接尚未接通，不能继续申请准备。', 'retryable': False, 'evidence_refs': []}] is expected to be empty"
+    },
+    {
+      "case": "closed_aftercare-evidence",
+      "rejected": "v1_formal_handoff_closed"
+    },
+    {
+      "case": "closed_aftercare-interact",
+      "rejected": "v1_formal_handoff_closed"
+    },
+    {
+      "case": "layout_only_preserves_choice",
+      "result": {
+        "choice_valid": true,
+        "formal_preparation_allowed": false,
+        "submission_authorized": false,
+        "reason": "central_v1_contract_gaps",
+        "page_current": false
+      }
+    },
+    {
+      "case": "self",
+      "result": "no_execution_authority"
+    },
+    {
+      "case": "guided",
+      "result": "no_execution_authority"
+    },
+    {
+      "case": "auto",
+      "result": "no_execution_authority"
+    }
+  ],
+  "behavior": {
+    "method": "author_walkthrough",
+    "independent_model_test": "not_run"
+  },
+  "integration": {
+    "status": "partial_actual_code_executed",
+    "intake_local_demo_completed": "completed",
+    "intake_v2_rejected_without_projection": true,
+    "actual_order_checker": {
+      "selection_valid": true,
+      "remedy_handoff": false,
+      "reason": "central_v1_has_no_confirmed_intent_contract",
+      "controls_usable": true
+    },
+    "order_output_to_remedy_checker": {
+      "choice_valid": true,
+      "formal_preparation_allowed": false,
+      "submission_authorized": false,
+      "reason": "central_v1_contract_gaps",
+      "page_current": true
+    },
+    "model_calls": false,
+    "full_positive_chain": "not_run; contracts incompatible",
+    "platform_evidence_interact_runtime": "not_implemented_here"
+  },
+  "source_integrity": "all recorded upstream sources unchanged; 17 derived definitions identical",
+  "downstream": "two actual central request definitions validated; no downstream implementation invoked"
+}

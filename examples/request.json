@@ -1,0 +1,35 @@
+{
+  "message_type": "request",
+  "body": {
+    "contract_version": "1.0.0",
+    "skill_id": "aftercare-remedy",
+    "skill_version": "1.0.0",
+    "call_id": "call-remedy-demo",
+    "task_id": "task-demo",
+    "expected_task_revision": 4,
+    "mode": "guided",
+    "task_snapshot": {
+      "artifact_id": "snapshot-demo",
+      "kind": "TaskSnapshot",
+      "revision": 1
+    },
+    "inputs": {
+      "intent": {
+        "artifact_id": "intent-demo",
+        "kind": "TaskIntent",
+        "revision": 1
+      },
+      "platform_view": {
+        "artifact_id": "view-demo",
+        "kind": "PlatformView",
+        "revision": 1
+      },
+      "user_decision": null,
+      "order": {
+        "artifact_id": "order-demo",
+        "kind": "OrderSelection",
+        "revision": 1
+      }
+    }
+  }
+}

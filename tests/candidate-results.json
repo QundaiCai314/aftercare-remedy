@@ -1,0 +1,30 @@
+[
+  {
+    "file": "positive.json",
+    "schema_accepted": true,
+    "semantic_errors": [],
+    "expected_behavior": true
+  },
+  {
+    "file": "negative-unknown-fee-zero.json",
+    "schema_accepted": false,
+    "semantic_errors": [],
+    "expected_behavior": true
+  },
+  {
+    "file": "negative-missing-condition.json",
+    "schema_accepted": false,
+    "semantic_errors": [],
+    "expected_behavior": true
+  },
+  {
+    "file": "negative-ready-with-unknown.json",
+    "schema_accepted": true,
+    "semantic_errors": [
+      "choice_missing",
+      "conditions_unknown",
+      "important_terms_unknown"
+    ],
+    "expected_behavior": true
+  }
+]

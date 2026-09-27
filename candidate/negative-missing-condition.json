@@ -1,0 +1,82 @@
+{
+  "profile": "proposed-remedy-assessment-1",
+  "plan_ref": "plan-demo-r1",
+  "task_id": "task-demo",
+  "target_item_ref": "item-a",
+  "terms_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "rules": [
+    {
+      "rule_id": "rule-demo",
+      "source_kind": "official_order_page",
+      "evidence_refs": [
+        "ev-rule"
+      ],
+      "platform_key": "platform-sandbox",
+      "account_scope_ref": "account-demo",
+      "item_ref": "item-a",
+      "observation_ref": "observation-demo",
+      "observed_at": "2026-09-27T12:00:00+08:00",
+      "applies": "yes"
+    }
+  ],
+  "options": [
+    {
+      "option_id": "option-return",
+      "availability": "conditional",
+      "rule_refs": [
+        "rule-demo"
+      ],
+      "condition_checks": [
+        {
+          "condition_id": "eligibility",
+          "state": "unknown",
+          "evidence_refs": []
+        }
+      ],
+      "refund_amount": {
+        "state": "unknown",
+        "value": null,
+        "evidence_refs": []
+      },
+      "return_fee": {
+        "state": "unknown",
+        "value": null,
+        "evidence_refs": []
+      },
+      "deadline": {
+        "state": "unknown",
+        "value": null,
+        "evidence_refs": []
+      },
+      "return_required": {
+        "state": "known",
+        "value": true,
+        "evidence_refs": [
+          "ev-rule"
+        ]
+      }
+    }
+  ],
+  "materials": [
+    {
+      "requirement_id": "photo",
+      "text": "若申请损坏原因，提供问题照片",
+      "level": "conditional",
+      "condition_ref": null,
+      "evidence_refs": [
+        "ev-rule"
+      ]
+    }
+  ],
+  "conflicts": [],
+  "choice_binding_ref": null,
+  "preparation": {
+    "state": "needs_observation",
+    "blocker_codes": [
+      "conditions_unknown",
+      "money_unknown"
+    ],
+    "evidence_refs": []
+  },
+  "submission_authorized": false
+}

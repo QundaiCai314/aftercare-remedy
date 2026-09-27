@@ -1,0 +1,647 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "Money": {
+      "type": "object",
+      "properties": {
+        "currency": {
+          "type": "string",
+          "pattern": "^[A-Z]{3}$"
+        },
+        "minor_units": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "currency",
+        "minor_units"
+      ],
+      "additionalProperties": false
+    },
+    "KnownMoney": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "known"
+            },
+            "value": {
+              "$ref": "#/$defs/Money"
+            },
+            "evidence_refs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1
+            }
+          },
+          "required": [
+            "state",
+            "value",
+            "evidence_refs"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "unknown"
+            },
+            "value": {
+              "type": "null"
+            },
+            "evidence_refs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "required": [
+            "state",
+            "value",
+            "evidence_refs"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "not_applicable"
+            },
+            "value": {
+              "type": "null"
+            },
+            "evidence_refs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1
+            }
+          },
+          "required": [
+            "state",
+            "value",
+            "evidence_refs"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "KnownDeadline": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "known"
+            },
+            "value": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "evidence_refs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1
+            }
+          },
+          "required": [
+            "state",
+            "value",
+            "evidence_refs"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "unknown"
+            },
+            "value": {
+              "type": "null"
+            },
+            "evidence_refs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "required": [
+            "state",
+            "value",
+            "evidence_refs"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "not_applicable"
+            },
+            "value": {
+              "type": "null"
+            },
+            "evidence_refs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1
+            }
+          },
+          "required": [
+            "state",
+            "value",
+            "evidence_refs"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "KnownReturn": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "known"
+            },
+            "value": {
+              "type": "boolean"
+            },
+            "evidence_refs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1
+            }
+          },
+          "required": [
+            "state",
+            "value",
+            "evidence_refs"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "unknown"
+            },
+            "value": {
+              "type": "null"
+            },
+            "evidence_refs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "required": [
+            "state",
+            "value",
+            "evidence_refs"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "not_applicable"
+            },
+            "value": {
+              "type": "null"
+            },
+            "evidence_refs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1
+            }
+          },
+          "required": [
+            "state",
+            "value",
+            "evidence_refs"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "RuleEvidence": {
+      "type": "object",
+      "properties": {
+        "rule_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_kind": {
+          "enum": [
+            "official_order_page",
+            "official_general",
+            "merchant",
+            "user_report"
+          ]
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "platform_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "account_scope_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "item_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "observation_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "observed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "applies": {
+          "enum": [
+            "yes",
+            "no",
+            "unknown"
+          ]
+        }
+      },
+      "required": [
+        "rule_id",
+        "source_kind",
+        "evidence_refs",
+        "platform_key",
+        "account_scope_ref",
+        "item_ref",
+        "observation_ref",
+        "observed_at",
+        "applies"
+      ],
+      "additionalProperties": false
+    },
+    "OptionAssessment": {
+      "type": "object",
+      "properties": {
+        "option_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "availability": {
+          "enum": [
+            "available",
+            "conditional",
+            "unavailable",
+            "unknown"
+          ]
+        },
+        "rule_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "condition_checks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "condition_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "state": {
+                "enum": [
+                  "met",
+                  "unmet",
+                  "unknown"
+                ]
+              },
+              "evidence_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "required": [
+              "condition_id",
+              "state",
+              "evidence_refs"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "refund_amount": {
+          "$ref": "#/$defs/KnownMoney"
+        },
+        "return_fee": {
+          "$ref": "#/$defs/KnownMoney"
+        },
+        "deadline": {
+          "$ref": "#/$defs/KnownDeadline"
+        },
+        "return_required": {
+          "$ref": "#/$defs/KnownReturn"
+        }
+      },
+      "required": [
+        "option_id",
+        "availability",
+        "rule_refs",
+        "condition_checks",
+        "refund_amount",
+        "return_fee",
+        "deadline",
+        "return_required"
+      ],
+      "additionalProperties": false
+    },
+    "MaterialRequirement": {
+      "type": "object",
+      "properties": {
+        "requirement_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "level": {
+          "enum": [
+            "required",
+            "conditional",
+            "suggested",
+            "unknown"
+          ]
+        },
+        "condition_ref": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "requirement_id",
+        "text",
+        "level",
+        "condition_ref",
+        "evidence_refs"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "level": {
+                "const": "conditional"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "condition_ref": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "level": {
+                "enum": [
+                  "required",
+                  "conditional"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "evidence_refs": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "RemedyAssessment": {
+      "type": "object",
+      "properties": {
+        "profile": {
+          "const": "proposed-remedy-assessment-1"
+        },
+        "plan_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "task_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_item_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "terms_digest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/RuleEvidence"
+          }
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/OptionAssessment"
+          }
+        },
+        "materials": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/MaterialRequirement"
+          }
+        },
+        "conflicts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "left_rule_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "right_rule_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "affected_fields": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "state": {
+                "enum": [
+                  "unresolved",
+                  "resolved"
+                ]
+              },
+              "resolution_evidence_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "required": [
+              "left_rule_ref",
+              "right_rule_ref",
+              "affected_fields",
+              "state",
+              "resolution_evidence_refs"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "choice_binding_ref": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "preparation": {
+          "type": "object",
+          "properties": {
+            "state": {
+              "enum": [
+                "analysis_only",
+                "awaiting_choice",
+                "needs_observation",
+                "needs_materials",
+                "ready_for_preparation",
+                "blocked"
+              ]
+            },
+            "blocker_codes": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "intent_unconfirmed",
+                  "target_unconfirmed",
+                  "choice_missing",
+                  "conditions_unknown",
+                  "conflict",
+                  "money_unknown",
+                  "materials_missing",
+                  "existing_application",
+                  "unsupported",
+                  "contract_gap"
+                ]
+              }
+            },
+            "evidence_refs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "required": [
+            "state",
+            "blocker_codes",
+            "evidence_refs"
+          ],
+          "additionalProperties": false
+        },
+        "submission_authorized": {
+          "const": false
+        }
+      },
+      "required": [
+        "profile",
+        "plan_ref",
+        "task_id",
+        "target_item_ref",
+        "terms_digest",
+        "rules",
+        "options",
+        "materials",
+        "conflicts",
+        "choice_binding_ref",
+        "preparation",
+        "submission_authorized"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$ref": "#/$defs/RemedyAssessment"
+}

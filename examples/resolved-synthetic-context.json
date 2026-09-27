@@ -1,0 +1,227 @@
+{
+  "revision": 4,
+  "mode": "guided",
+  "paused": false,
+  "account": "account-demo",
+  "mapping_revision": 1,
+  "candidate_set": "set-demo",
+  "page_current": true,
+  "registry": {
+    "snapshot-demo": {
+      "kind": "TaskSnapshot",
+      "revision": 1,
+      "task_id": "task-demo",
+      "data": {
+        "task_id": "task-demo",
+        "task_revision": 4,
+        "target_item_ref": "item-a",
+        "selection_receipt_ref": "receipt-demo",
+        "intent_ref": {
+          "artifact_id": "intent-demo",
+          "kind": "TaskIntent",
+          "revision": 1
+        },
+        "remedy_ref": null,
+        "outcome_ref": null,
+        "mode": "guided",
+        "paused": false,
+        "remaining_budget": {
+          "actions": 3,
+          "recovery_attempts": 1,
+          "deadline_at": "2026-09-27T23:00:00+08:00"
+        },
+        "scope_grant_refs": [
+          "grant-demo"
+        ],
+        "pending_execution_refs": [],
+        "related_artifact_refs": []
+      }
+    },
+    "intent-demo": {
+      "kind": "TaskIntent",
+      "revision": 1,
+      "task_id": "task-demo",
+      "data": {
+        "goal": "用户想处理有裂纹的杯子，希望退回并退款。",
+        "scope": "single_item_single_case",
+        "user_facts": [
+          {
+            "key": "defect",
+            "value": "用户说杯口有裂纹",
+            "evidence_refs": [
+              "ev-user"
+            ],
+            "certainty": "user_reported"
+          }
+        ],
+        "requested_outcome": "return_refund",
+        "missing_fields": [
+          "confirmation_binding",
+          "target_item"
+        ]
+      }
+    },
+    "view-demo": {
+      "kind": "PlatformView",
+      "revision": 1,
+      "task_id": "task-demo",
+      "data": {
+        "platform_key": "platform-sandbox",
+        "environment": "sandbox",
+        "page_kind": "aftersales",
+        "supported_operations": [
+          "request_return_refund"
+        ],
+        "unsupported_operations": [],
+        "state_facts": [
+          {
+            "key": "item",
+            "value": "蓝色杯子，测试店铺，合成购买记录A",
+            "evidence_refs": [
+              "ev-a"
+            ],
+            "certainty": "observed"
+          }
+        ],
+        "rules": [
+          {
+            "key": "route",
+            "value": "当前目标商品页面显示退货退款入口",
+            "evidence_refs": [
+              "ev-rule"
+            ],
+            "certainty": "observed"
+          },
+          {
+            "key": "return",
+            "value": "申请此方案需寄回商品",
+            "evidence_refs": [
+              "ev-rule"
+            ],
+            "certainty": "observed"
+          },
+          {
+            "key": "photo",
+            "value": "页面要求提供商品问题照片",
+            "evidence_refs": [
+              "ev-rule"
+            ],
+            "certainty": "observed"
+          }
+        ],
+        "controls": [],
+        "expires_on_page_change": true
+      }
+    },
+    "decision-artifact": {
+      "kind": "UserDecision",
+      "revision": 1,
+      "task_id": "task-demo",
+      "data": {
+        "decision_id": "decision-demo",
+        "task_id": "task-demo",
+        "user_event_ref": "event-select",
+        "decision_kind": "select_item",
+        "subject_ref": "set-demo",
+        "selected_value_ref": "item-a",
+        "based_on_task_revision": 3,
+        "recorded_at": "2026-09-27T12:00:00+08:00"
+      }
+    },
+    "order-demo": {
+      "kind": "OrderSelection",
+      "revision": 1,
+      "task_id": "task-demo",
+      "data": {
+        "candidates": [
+          {
+            "item_ref": "item-a",
+            "display_label": "蓝色杯子 · 测试店铺 · 购买记录A",
+            "order_ref": "order-a",
+            "evidence_refs": [
+              "ev-a"
+            ]
+          }
+        ],
+        "selected_item_ref": "item-a",
+        "selection_receipt_ref": "receipt-demo",
+        "lookup_steps": []
+      }
+    }
+  },
+  "items": {
+    "item-a": {
+      "order_ref": "order-a"
+    },
+    "item-b": {
+      "order_ref": "order-b"
+    }
+  },
+  "evidence": {
+    "ev-a": {
+      "task_id": "task-demo",
+      "item_ref": "item-a",
+      "order_ref": "order-a"
+    },
+    "ev-b": {
+      "task_id": "task-demo",
+      "item_ref": "item-b",
+      "order_ref": "order-b"
+    },
+    "ev-rule": {
+      "task_id": "task-demo",
+      "item_ref": "item-a",
+      "order_ref": "order-a",
+      "source": "official_order_page",
+      "observed_at": "2026-09-27T12:00:00+08:00",
+      "current": true
+    },
+    "ev-user": {
+      "task_id": "task-demo",
+      "item_ref": "item-a",
+      "order_ref": "order-a",
+      "source": "user",
+      "current": true
+    }
+  },
+  "receipts": {
+    "receipt-demo": {
+      "decision_id": "decision-demo",
+      "task_id": "task-demo",
+      "user_event_ref": "event-select",
+      "decision_kind": "select_item",
+      "subject_ref": "set-demo",
+      "selected_value_ref": "item-a",
+      "based_on_task_revision": 3,
+      "recorded_at": "2026-09-27T12:00:00+08:00"
+    }
+  },
+  "events": {
+    "event-select": {
+      "source": "user",
+      "explicit": true,
+      "uncertain": false,
+      "subject_ref": "set-demo",
+      "item_ref": "item-a"
+    }
+  },
+  "bindings": {
+    "receipt-demo": {
+      "active": true,
+      "account": "account-demo",
+      "mapping_revision": 1,
+      "candidate_set": "set-demo",
+      "validated_revision": 4
+    }
+  },
+  "option_kinds": {
+    "option-return": "return_refund"
+  },
+  "choice_bindings": {},
+  "choice_events": {},
+  "choice_receipts": {},
+  "material_levels": {
+    "photo": "required"
+  },
+  "intent_confirmation_available": false
+}
